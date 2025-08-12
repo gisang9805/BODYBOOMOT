@@ -18,7 +18,19 @@
     <input type="text" name="entry.416841762" required>
 
     <label>연락처</label>
-    <input type="text" name="entry.1151944008" required>
+    <div style="display: flex; align-items: center; gap: 4px;">
+  <span style="padding: 8px 6px; background: #eee; border: 1px solid #ccc; border-radius: 4px; user-select: none;">010-</span>
+  <input 
+    type="text" 
+    name="entry.1151944008" 
+    pattern="\d{8}" 
+    maxlength="8" 
+    placeholder="12345678" 
+    required
+    style="flex: 1; padding: 8px; box-sizing: border-box;"
+    title="8자리 숫자만 입력하세요 (예: 12345678)" 
+    />
+    </div>
 
     <label>희망 시간</label>
     <input type="text" name="entry.1671531755">
