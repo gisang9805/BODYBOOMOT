@@ -64,6 +64,10 @@
   button:hover {
     background: #0056b3;
   }
+  label {
+    display: block;
+    margin: 15px 0 5px;
+  }
 
   /* 모바일 최적화 */
   @media (max-width: 480px) {
@@ -98,7 +102,7 @@
     </label>
     <div></div>
     
-    <label>연락처 :
+    <label class = "contact-label">연락처 :
     <class="phone-wrapper">
       <span class="phone-prefix">010 -</span>
       <input 
@@ -113,7 +117,7 @@
       </label>
     
     
-    <label>희망 시간
+    <label class = "contact-label">희망 시간
     <select name="entry.1671531755" required>
       <option value="" disabled selected>선택하세요</option>
       <option value="06:00">06시</option>
