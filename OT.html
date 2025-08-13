@@ -5,64 +5,135 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>OT 신청</title>
 <style>
-  body { font-family: sans-serif; max-width: 400px; margin: auto; padding: 20px; }
-  h2 {
-    text-align: center
+  body {
+    font-family: sans-serif;
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    background: #f9f9f9;
   }
-  form { text-align: center; }
-  label { display: block; margin: 10px 0 5px; }
-  input { max-width: 25%; padding: 8px; box-sizing: border-box; }
-  button { margin-top: 15px; width: 50%; padding: 10px; background: #007bff; color: white; border: none; }
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  form {
+    text-align: center;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  label {
+    display: block;
+    margin: 12px 0 5px;
+    font-weight: bold;
+    text-align: center;
+  }
+  input, select {
+    max-width: 70%;
+    padding: 8px;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 16px;
+  }
+  .phone-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+  }
+  .phone-prefix {
+    padding: 7px 6px;
+    background: #eee;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    user-select: none;
+    font-size: 16px;
+  }
+  button {
+    margin-top: 15px;
+    width: 60%;
+    padding: 10px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  button:hover {
+    background: #0056b3;
+  }
+
+  /* 모바일 최적화 */
+  @media (max-width: 480px) {
+    body {
+      padding: 15px;
+    }
+    h2 {
+      font-size: 20px;
+    }
+    input, select {
+      max-width: 90%;
+      font-size: 14px;
+      padding: 6px;
+    }
+    .phone-prefix {
+      font-size: 14px;
+      padding: 5px 4px;
+    }
+    button {
+      font-size: 14px;
+      padding: 8px;
+    }
+  }
 </style>
 </head>
 <body>
   <h2>바디붐 OT 신청</h2>
   <form action="https://docs.google.com/forms/d/e/1FAIpQLSdkn6bmqyHSe6Sei5NZSyGEviC6OFh9k372MybSUUwloisVRg/formResponse" method="POST" target="hidden_iframe" onsubmit="submitted=true;">
-    <label>이름 : 
-    <input type="text" name="entry.416841762" required>
-    </label>
-     <div></div>
-    <label>연락처 : 
-    <style="display: flex; align-items: center; gap: 4px;">
-  <span style="padding: 7px 6px; background: #eee; border: 1px solid #ccc; border-radius: 4px; user-select: none;">010 -</span>
-  <input 
-    type="text" 
-    name="entry.1151944008" 
-    pattern="\d{8}" 
-    maxlength="8" 
-    placeholder="12345678" 
-    required style="max-width: 70px; flex: 1; padding: 8px; box-sizing: border-box;"
-    title="8자리 숫자만 입력하세요 (예: 12345678)" 
-    />
-         </label>
-    <div></div>
     
-    <label>희망 시간 :
-    <select name="entry.1671531755" required style="max-width: 70%; padding: 8px; box-sizing: border-box;">
-  <option value="" disabled selected>선택하세요</option>
-  <option value="06:00">06시</option>
-  <option value="07:00">07시</option>
-  <option value="08:00">08시</option>
-  <option value="09:00">09시</option>
-  <option value="10:00">10시</option>
-  <option value="11:00">11시</option>
-  <option value="12:00">12시</option>
-  <option value="13:00">13시</option>
-  <option value="14:00">14시</option>
-  <option value="15:00">15시</option>
-  <option value="16:00">16시</option>
-  <option value="17:00">17시</option>
-  <option value="18:00">18시</option>
-  <option value="19:00">19시</option>
-  <option value="20:00">20시</option>
-  <option value="21:00">21시</option>
-  <option value="22:00">22시</option>
-</select>
-      </label>
-    <div>
+    <label>이름</label>
+    <input type="text" name="entry.416841762" required>
+    
+    <label>연락처</label>
+    <div class="phone-wrapper">
+      <span class="phone-prefix">010 -</span>
+      <input 
+        type="text" 
+        name="entry.1151944008" 
+        pattern="\d{8}" 
+        maxlength="8" 
+        placeholder="12345678" 
+        required
+        title="8자리 숫자만 입력하세요 (예: 12345678)" 
+      />
     </div>
+    
+    <label>희망 시간</label>
+    <select name="entry.1671531755" required>
+      <option value="" disabled selected>선택하세요</option>
+      <option value="06:00">06시</option>
+      <option value="07:00">07시</option>
+      <option value="08:00">08시</option>
+      <option value="09:00">09시</option>
+      <option value="10:00">10시</option>
+      <option value="11:00">11시</option>
+      <option value="12:00">12시</option>
+      <option value="13:00">13시</option>
+      <option value="14:00">14시</option>
+      <option value="15:00">15시</option>
+      <option value="16:00">16시</option>
+      <option value="17:00">17시</option>
+      <option value="18:00">18시</option>
+      <option value="19:00">19시</option>
+      <option value="20:00">20시</option>
+      <option value="21:00">21시</option>
+      <option value="22:00">22시</option>
+    </select>
+    
     <button type="submit">신청하기</button>
   </form>
+  
   <iframe name="hidden_iframe" style="display:none;" onload="if(submitted){alert('신청이 완료되었습니다!');}"></iframe>
   <script>var submitted = false;</script>
 </body>
